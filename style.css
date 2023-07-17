@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Victor Mono', monospace;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    justify-content: center;
+    background: lightblue;
+
+}
+
+.game {
+    display: flex;
+    flex-direction: column;
+    width: 400px;
+    height: 700px;
+    background: white;
+    border-radius: 20px;
+    padding: 20px;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+@media (max-width: 539px) {
+    .game {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100%;
+        background: white;
+        border-radius: 0;
+        padding: 20px;
+        align-items: center;
+        box-sizing: border-box;
+    }
+}
+
+.game-rules {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.game-rules p {
+    padding-top: 5rem;
+    font-size: 20px;
+}
+
+ul {
+    padding: 30px;
+    font-size: 16px;
+}
+
+li {
+    margin-top: 5px;
+}
+
+.button {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    background: #3f3f9a;
+    color: white;
+    font-size: 20px;
+    box-sizing: border-box;
+    font-family: 'Victor Mono', monospace;
+
+}
+
+.game-field {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    justify-content: space-between;
+    padding: 10px;
+    overflow: hidden;
+
+
+}
+
+.counter {
+    align-self: center;
+    font-size: 32px;
+}
+
+.game-log {
+    width: 100%;
+    height: 40%;
+    border: 1px solid black;
+    border-radius: 10px;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 10px;
+    background: #bbdcee;
+}
+
+.game-input {
+    align-self: center;
+    height: 40px;
+    width: 96%;
+    border-radius: 10px;
+    border: 1px solid black;
+    padding: 5px;
+    text-align: center;
+    outline: none;
+    font-family: 'Victor Mono', monospace;
+    font-size: 20px;
+
+}
+
+.game-message {
+    margin-top: 5px;
+    padding: 5px;
+}
+
+.game-error-message {
+    color: red;
+}
+
+.game-win-message {
+    color: #02a402;
+}
+
+/*Disable arrows in input type="number"*/
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+    -moz-appearance: textfield;
+}

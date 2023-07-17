@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Mastermind</title>
+    <link rel="stylesheet" href="./style.css">
+<!--    <script src="./CowsAndBulls.js" defer></script>-->
+    <script type="module" src="./script.js" defer></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="game">
+        <div class="header">
+            <h1>Mastermind</h1>
+        </div>
+        <div class="game-rules" id="game-rules">
+            <div class="rules">
+
+                <p>В этой игре вам нужно угадать число, загаданное компьютером.</p>
+                <ul>
+                    <li>Число состоит из четырёх цифр в формате "1234".</li>
+                    <li>Цифры не повторяются.</li>
+                    <li>Загаданное число не начинается с нуля.</li>
+                    <li>"Корова" - цифра есть в числе, но не на своём месте.</li>
+                    <li>"Бык" - цифра есть в числе и стоит на своём месте.</li>
+                </ul>
+            </div>
+            <button class="button start-button" id="start-button">Поехали!</button>
+        </div>
+        <div class="game-field" id="game-field">
+            <div class="counter" id="counter">0</div>
+            <div class="game-log" id="game-log"></div>
+            <input class="game-input" id="numberInput" type="number" placeholder="Введите число">
+            <button class="button check-button" id="check-button">Проверить</button>
+            <button class="button check-button" id="repeat-button">Сыграть ещё</button>
+        </div>
+    </div>
+</div>
+</body>
+</html>
