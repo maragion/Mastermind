@@ -29,6 +29,7 @@ body {
     padding: 20px;
     align-items: center;
     box-sizing: border-box;
+    position: relative;
 }
 
 @media (max-width: 539px) {
@@ -42,6 +43,8 @@ body {
         padding: 20px;
         align-items: center;
         box-sizing: border-box;
+        position: relative;
+
     }
 }
 
@@ -55,12 +58,12 @@ body {
 
 .game-rules p {
     padding-top: 5rem;
-    font-size: 20px;
+    font-size: 16px;
 }
 
 ul {
     padding: 30px;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 li {
@@ -76,7 +79,29 @@ li {
     font-size: 20px;
     box-sizing: border-box;
     font-family: 'Victor Mono', monospace;
+}
 
+.help-button {
+    height: 32px;
+    width: 32px;
+    color: #1d9a9a;
+    font-size: 20px;
+    border: 1px solid #1d9a9a;
+    border-radius: 10px;
+    grid-column: 6;
+    justify-self: end;
+}
+
+.game-info {
+    width: 100%;
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(6, 1fr);
+    justify-items: center;
+}
+
+.game-info h1 {
+    grid-column: 2 / 6;
 }
 
 .game-field {
@@ -88,24 +113,23 @@ li {
     justify-content: space-between;
     padding: 10px;
     overflow: hidden;
-
-
 }
 
 .counter {
-    align-self: center;
     font-size: 32px;
+    align-self: center;
 }
 
 .game-log {
     width: 100%;
-    height: 40%;
+    height: 45%;
     border: 1px solid black;
     border-radius: 10px;
     overflow-y: auto;
     box-sizing: border-box;
     padding: 10px;
     background: #bbdcee;
+    font-size: 14px;
 }
 
 .game-input {

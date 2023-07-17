@@ -3,8 +3,7 @@ export class Game {
         this.secretNumber = this.makeSecretNumber();
         this.guess = 0;
         this.result = {
-            cows: 0,
-            bulls: 0
+            cows: 0, bulls: 0
         };
         this.message = "";
         this.params = params
@@ -25,12 +24,11 @@ export class Game {
     }
 
     validateUserInput() {
-        let userNumber = document.getElementById("numberInput").value;
-
+        let userNumber = document.getElementById("numberInput").value
         if (userNumber.length > 4 || userNumber.length < 4) {
             this.message = `<div class="game-error-message game-message">Число должно состоять из четырёх цифр!</div>`
         } else if (!(Number.isInteger(Number(userNumber))) || userNumber.includes("e")) {
-            this.message = `<div class="game-error-message game-message">Ввод должен состоять только из цифр!</div>`
+            this.message = `<div class="game-error-message game-message">Число должно состоять только из цифр!</div>`
         } else if (userNumber[0] === "0") {
             this.message = `<div class="game-error-message game-message">Число не должно начинаться с нуля!</div>`
         } else if (new Set(userNumber).size !== userNumber.length) {
@@ -42,13 +40,11 @@ export class Game {
         if (!this.validateUserInput()) {
             return
         }
+        let userNumber = document.getElementById("numberInput").value
         let result = {
-            cows: 0,
-            bulls: 0
+            cows: 0, bulls: 0
         }
         const secretNumber = this.secretNumber;
-        let userNumber = document.getElementById("numberInput").value;
-
         for (let i = 0; i < secretNumber.length; i++) {
             if (userNumber[i] === secretNumber[i]) {
                 result.bulls += 1;
@@ -67,16 +63,21 @@ export class Game {
             this.params.repeatButton.style.display = "block";
             this.params.checkButton.style.display = "none";
             this.params.checkButton.setAttribute("disabled", "")
-        } return true
+        }
+        return true
     }
 
     sendMessage() {
-        const messageLog = document.getElementById("game-log");
-        const guessLog = document.getElementById("counter");
-        messageLog.innerHTML += this.message;
-        messageLog.scrollTop = messageLog.scrollHeight;
-        guessLog.innerHTML = this.guess;
+        this.params.messageLog.innerHTML += this.message;
+        this.params.messageLog.scrollTop = this.params.messageLog.scrollHeight;
+        this.params.guessLog.innerHTML = this.guess;
     }
+
+    help() {
+        this.params.messageLog.innerHTML += this.params.helpMessage
+        this.params.messageLog.scrollTop = this.params.messageLog.scrollHeight;
+    }
+
     step() {
         this.countBullsAndCows();
         this.checkWin();

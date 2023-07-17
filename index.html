@@ -5,19 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Mastermind</title>
     <link rel="stylesheet" href="./style.css">
-<!--    <script src="./CowsAndBulls.js" defer></script>-->
     <script type="module" src="./script.js" defer></script>
 
 </head>
 <body>
 <div class="container">
     <div class="game">
-        <div class="header">
+
+        <div class="game-info">
             <h1>Mastermind</h1>
+            <button class="help-button" id="help-button">
+                ?
+            </button>
         </div>
+
         <div class="game-rules" id="game-rules">
             <div class="rules">
-
                 <p>В этой игре вам нужно угадать число, загаданное компьютером.</p>
                 <ul>
                     <li>Число состоит из четырёх цифр в формате "1234".</li>
