@@ -7,6 +7,12 @@
 
 body {
     font-family: 'Victor Mono', monospace;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
+}
+
+html {
+    height: -webkit-fill-available;
 }
 
 .container {
@@ -39,7 +45,7 @@ body {
         height: 100vh;
         background: white;
         border-radius: 0;
-        padding: 50px 20px;
+        padding: 20px;
         align-items: center;
         box-sizing: border-box;
     }
