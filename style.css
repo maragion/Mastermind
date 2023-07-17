@@ -7,15 +7,12 @@
 
 body {
     font-family: 'Victor Mono', monospace;
-    height: 100vh;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
 }
 
-/* Avoid Chrome to see Safari hack */
-@supports (-webkit-touch-callout: none) {
-    body {
-        /* The hack for Safari */
-        height: -webkit-fill-available;
-    }
+html {
+    height: -webkit-fill-available;
 }
 
 .container {
