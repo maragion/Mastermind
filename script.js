@@ -3,26 +3,42 @@ import {Game} from "./CowsAndBulls.js";
 const rules = document.getElementById("game-rules");
 const gameField = document.getElementById("game-field");
 const startButton = document.getElementById("start-button");
-const repeatButton = document.getElementById("repeat-button");
+
+
+document.getElementById("numberInput")
+    .addEventListener("keyup", (event) => {
+        event.preventDefault();
+        if (event.key === "Enter") {
+            document.getElementById("check-button").click();
+        }
+    });
+
+
+let params = {
+    checkButton: document.getElementById("check-button"),
+    repeatButton: document.getElementById("repeat-button"),
+}
+
+let game = new Game(params);
 
 gameField.style.display = "none";
-
-let game = new Game();
-
 
 startButton.addEventListener("click", () => {
     rules.style.display = "none";
     gameField.style.display = "flex";
-    repeatButton.style.display = "none";
+    params.repeatButton.style.display = "none";
 })
 
 
-let checkButton = document.getElementById("check-button");
-checkButton.addEventListener("click", () => {game.step()})
-repeatButton.addEventListener("click", () => {
-        game = new Game();
-        repeatButton.style.display = "none";
-        checkButton.style.display = "block";
+params.checkButton.addEventListener("click", () => {
+    game.step();
+    console.log(game.secretNumber)
+})
+params.repeatButton.addEventListener("click", () => {
+        game = new Game(params);
+        params.checkButton.disabled = false
+        params.repeatButton.style.display = "none";
+        params.checkButton.style.display = "block";
     }
 )
 

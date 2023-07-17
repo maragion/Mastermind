@@ -1,5 +1,5 @@
 export class Game {
-    constructor() {
+    constructor(params) {
         this.secretNumber = this.makeSecretNumber();
         this.guess = 0;
         this.result = {
@@ -7,6 +7,7 @@ export class Game {
             bulls: 0
         };
         this.message = "";
+        this.params = params
     }
 
     makeSecretNumber() {
@@ -27,7 +28,7 @@ export class Game {
         let userNumber = document.getElementById("numberInput").value;
 
         if (userNumber.length > 4 || userNumber.length < 4) {
-            this.message = `<div class="game-error-message game-message">Число должно состоять из четырёх символов!</div>`
+            this.message = `<div class="game-error-message game-message">Число должно состоять из четырёх цифр!</div>`
         } else if (!(Number.isInteger(Number(userNumber))) || userNumber.includes("e")) {
             this.message = `<div class="game-error-message game-message">Ввод должен состоять только из цифр!</div>`
         } else if (userNumber[0] === "0") {
@@ -63,8 +64,9 @@ export class Game {
     checkWin() {
         if (this.result.bulls === 4) {
             this.message = (`<div class="game-win-message game-message">Вы Победили!!! Количество попыток: ${this.guess}</div>`);
-            repeatButton.style.display = "block";
-            checkButton.style.display = "none";
+            this.params.repeatButton.style.display = "block";
+            this.params.checkButton.style.display = "none";
+            this.params.checkButton.setAttribute("disabled", "")
         } return true
     }
 
